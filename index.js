@@ -47,7 +47,7 @@
 //то вывести строку "Здравствуйте!" 
 //иначе выводить строку "Неверный пароль!" 
 
-const loginInput = prompt("Введите свой логин");
+// const loginInput = prompt("Введите свой логин");
 
 // if (loginInput === "Админ") {
 //     const passwordInput = prompt("Ведите свой пароль");
@@ -65,23 +65,39 @@ const loginInput = prompt("Введите свой логин");
 //     console.log("Я вас не знаю");
 // }
  
-switch (loginInput) {
-    case "Админ":
-        const passwordInput = prompt("Ведите свой пароль");
-        switch (passwordInput) {
-            case "Я главный":
-                console.log("Здравствуйте!");
-                break;
-            case null:
-                console.log("Отменено");
-                break;
-            default:
-             console.log("Неверный пароль!");   
-        }
-        break;
-    case null:
-        console.log("Отменено");
-        break;
-    default:
-        console.log("Я вас не знаю");
-}
+// switch (loginInput) {
+//     case "Админ":
+//         const passwordInput = prompt("Ведите свой пароль");
+//         switch (passwordInput) {
+//             case "Я главный":
+//                 console.log("Здравствуйте!");
+//                 break;
+//             case null:
+//                 console.log("Отменено");
+//                 break;
+//             default:
+//              console.log("Неверный пароль!");   
+//         }
+//         break;
+//     case null:
+//         console.log("Отменено");
+//         break;
+//     default:
+//         console.log("Я вас не знаю");
+// }
+
+//Создайте массив styles с элементами «Джаз» и «Блюз».
+//Добавьте «Рок-н-ролл» в конец.
+//Замените значение «Блюз» на «Классика».
+//Удалите первый элемент массива и выведите его в консоль.
+//Вставьте «Рэп» и «Регги» в начало массива.
+
+const styles = ["Джаз", "Блюз"]
+styles.push("Рок-н-ролл")
+styles.splice(1, 1, "Классика")
+console.log(styles.shift())
+styles.unshift("Рэп","Регги")
+console.log(styles)
+
+
+
