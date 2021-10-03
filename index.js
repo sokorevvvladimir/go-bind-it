@@ -92,12 +92,25 @@
 //Удалите первый элемент массива и выведите его в консоль.
 //Вставьте «Рэп» и «Регги» в начало массива.
 
-const styles = ["Джаз", "Блюз"]
-styles.push("Рок-н-ролл")
-styles.splice(1, 1, "Классика")
-console.log(styles.shift())
-styles.unshift("Рэп","Регги")
-console.log(styles)
+// const styles = ["Джаз", "Блюз"]
+// styles.push("Рок-н-ролл")
+// styles.splice(1, 1, "Классика")
+// console.log(styles.shift())
+// styles.unshift("Рэп","Регги")
+// console.log(styles)
+// -------------------------------
+//Напишите функцию min(a, b), которая возвращает
+//меньшее из чисел a, b
+//нужно добавить проверку, что функция получает числа
 
-
-
+function numbers(a,b){
+    if(typeOf a === "number"&& typeOf b === "number"){
+         return a > b ? b : a;
+    }
+   return `Одно из значений не число`;
+    // if (a<b){
+    //     return a;
+    // }
+    // return b;
+}
+console.log(numbers(2,3))
