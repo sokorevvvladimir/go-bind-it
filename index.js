@@ -34,18 +34,18 @@
 
 // console.log(appDateMin(70));
 
-//4. Напишите код, который будет спрашивать 
-//логин с помощью prompt и логировать результат 
-//в консоль браузера 
+//4. Напишите код, который будет спрашивать
+//логин с помощью prompt и логировать результат
+//в консоль браузера
 //Если посетитель вводит "Админ",
-//то prompt запрашивает пароль. 
-//Если ничего не ввели или нажата клавиша Esc 
-//вывести стороку "Отменено" 
-//В противном случае вывксти строку "Я вас не знаю" 
-//Пароль проверять так: 
-//Если введён пароль "Я главный", 
-//то вывести строку "Здравствуйте!" 
-//иначе выводить строку "Неверный пароль!" 
+//то prompt запрашивает пароль.
+//Если ничего не ввели или нажата клавиша Esc
+//вывести стороку "Отменено"
+//В противном случае вывксти строку "Я вас не знаю"
+//Пароль проверять так:
+//Если введён пароль "Я главный",
+//то вывести строку "Здравствуйте!"
+//иначе выводить строку "Неверный пароль!"
 
 // const loginInput = prompt("Введите свой логин");
 
@@ -76,7 +76,7 @@
 //                 console.log("Отменено");
 //                 break;
 //             default:
-//              console.log("Неверный пароль!");   
+//              console.log("Неверный пароль!");
 //         }
 //         break;
 //     case null:
@@ -115,9 +115,6 @@
 // }
 // console.log(numbers(2,3))
 
-
-
-
 // Напиши скрипт, который для объекта user,
 //последовательно:
 //1 добавит поле mood со значением 'happy'
@@ -125,7 +122,6 @@
 //3 заменит значение premium на false
 //4 выводит содержимое объекта users в фортмате
 //ключ:значение используя Object.keys() и for...of
-
 
 // const user = {
 //   name: "John",
@@ -141,11 +137,9 @@
 
 //     console.log(`${key}: ${user[key]}`);
 
-
 // }
 
 // console.log(user)
-
 
 // У нас есть объект, в котором храняться зарплаты
 //нашей команды
@@ -173,20 +167,40 @@
 //с таким именем, ценой и количеством из объекта
 
 const stones = [
-    { name: "Щебень", price: 150, quantity: 50 },
-    { name: "Изумруд", price: 1300, quantity: 4 },
-    { name: "Бриллиант", price: 2700, quantity: 6 },
-    { name: "Сапфир", price: 400, quantity: 7 },
-    { name: "Щебень", price: 150, quantity: 100 },
+  { name: "Щебень", price: 150, quantity: 50 },
+  { name: "Изумруд", price: 1300, quantity: 4 },
+  { name: "Бриллиант", price: 2700, quantity: 6 },
+  { name: "Сапфир", price: 400, quantity: 7 },
+  { name: "Щебень", price: 150, quantity: 100 },
 ];
-const calcTotalPrice = function(stones, stonesName) {
-    let total = 0;
-    for (const stone of stones) {
-        if (stone.name === stonesName) {
-            total += (stone.price * stone.quantity);
-        }
+// const calcTotalPrice = function(stones, stonesName) {
+//     let total = 0;
+//     for (const stone of stones) {
+//         if (stone.name === stonesName) {
+//             total += (stone.price * stone.quantity);
+//         }
 
-    }
-    return total;
-}
+//     }
+//     return total;
+// }
+// console.log(calcTotalPrice(stones, "Щебень"));
+
+// const calcTotalPrice = function (stones, stonesName) {
+//   let total = 0;
+//   [...stones].forEach((stone) => {
+//     stone.name === stonesName ? (total += stone.price * stone.quantity) : 0;
+//   });
+//   return total;
+// };
+
+// console.log(calcTotalPrice(stones, "Щебень"));
+
+const calcTotalPrice = function (stones, stonesName) {
+  return [...stones].reduce(
+    (acc, { name, price, quantity }) =>
+      name === stonesName ? (acc += price * quantity) : acc,
+    0
+  );
+};
+
 console.log(calcTotalPrice(stones, "Щебень"));
