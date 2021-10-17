@@ -195,12 +195,38 @@ const stones = [
 
 // console.log(calcTotalPrice(stones, "Щебень"));
 
-const calcTotalPrice = function (stones, stonesName) {
-  return [...stones].reduce(
-    (acc, { name, price, quantity }) =>
-      name === stonesName ? (acc += price * quantity) : acc,
-    0
-  );
-};
+// const calcTotalPrice = function (stones, stonesName) {
+//   return [...stones].reduce(
+//     (acc, { name, price, quantity }) =>
+//       name === stonesName ? (acc += price * quantity) : acc,
+//     0
+//   );
+// };
 
-console.log(calcTotalPrice(stones, "Щебень"));
+// console.log(calcTotalPrice(stones, "Щебень"));
+
+
+// Найти первый уникланый символ в строке
+//в строке будут только буквы латинского алфавита и они будут в lowerCase
+let input1 = 'leetcode'; //0
+let input2 = 'loveleetcode'; //2
+let input3 = 'aabb'; //-1
+
+const firstUniceChar = function (str) {
+  const array = [...str]
+ 
+  const letters = array.reduce((acc, letter) => {
+    return {...acc, [letter]: acc[letter] ? acc[letter] + 1 : 1}
+  }, {})
+  for (const key in letters) {
+    if (letters[key] === 1) {
+      return array.indexOf(key);
+    };
+    
+  };
+  return -1;
+};
+console.log(firstUniceChar(input1));
+console.log(firstUniceChar(input2));
+console.log(firstUniceChar(input3));
+
