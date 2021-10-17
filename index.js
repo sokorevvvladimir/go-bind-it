@@ -243,8 +243,41 @@ const stones = [
 // }
 
 // console.log(findUniqNumber(numbers)); 
-const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
-function findUniqNumber(numbers) {
-    return numbers.reduce((acc, number) => acc.includes(number) ? acc: [...acc, number],[])
-}
-console.log(findUniqNumber(numbers)); 
+// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+// function findUniqNumber(numbers) {
+//     return numbers.reduce((acc, number) => acc.includes(number) ? acc: [...acc, number],[])
+// }
+// console.log(findUniqNumber(numbers)); 
+// ========================================
+//Дан массив с числами. Оставьте в нем только положительные числа.
+//Затем извлеките квадратный корень и этих чисел.
+// const array = [121, -2, 225, 0, 4, -5, 36, -11];
+// const sqrtArray = array.filter(elem => elem > 0).map(number => Math.sqrt(number));
+// console.log(sqrtArray);
+// ===============================================
+
+
+//10. Создание массива значений Фаренгейта из массива значений Цельсия
+
+// let celsius = [-15, -5, 0, 10, 16, 20, 24, 32];
+
+// let farengeit = celsius.map((t) => {
+//     return t * 1.8 + 32;
+   
+// })
+// console.log(farengeit);
+
+// ====================================================
+//8. Узнать общие годы практики в объекте workers
+
+// const workers = [
+//   { id: 10, name: 'Mango', years: 14 },
+//   { id: 2, name: 'Poly', years: 19 },
+//   { id: 41, name: 'Ajax', years: 30 },
+//   { id: 99, name: 'Kiwi', years: 22 },
+// ];
+
+// const years = workers.reduce((acc, user) => {
+//     return acc + user.years;
+// }, 0)
+// console.log(years);
