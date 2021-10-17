@@ -208,25 +208,43 @@ const stones = [
 
 // Найти первый уникланый символ в строке
 //в строке будут только буквы латинского алфавита и они будут в lowerCase
-let input1 = 'leetcode'; //0
-let input2 = 'loveleetcode'; //2
-let input3 = 'aabb'; //-1
+// let input1 = 'leetcode'; //0
+// let input2 = 'loveleetcode'; //2
+// let input3 = 'aabb'; //-1
 
-const firstUniceChar = function (str) {
-  const array = [...str]
+// const firstUniceChar = function (str) {
+//   const array = [...str]
  
-  const letters = array.reduce((acc, letter) => {
-    return {...acc, [letter]: acc[letter] ? acc[letter] + 1 : 1}
-  }, {})
-  for (const key in letters) {
-    if (letters[key] === 1) {
-      return array.indexOf(key);
-    };
+//   const letters = array.reduce((acc, letter) => {
+//     return {...acc, [letter]: acc[letter] ? acc[letter] + 1 : 1}
+//   }, {})
+//   for (const key in letters) {
+//     if (letters[key] === 1) {
+//       return array.indexOf(key);
+//     };
     
-  };
-  return -1;
-};
-console.log(firstUniceChar(input1));
-console.log(firstUniceChar(input2));
-console.log(firstUniceChar(input3));
+//   };
+//   return -1;
+// };
+// console.log(firstUniceChar(input1));
+// console.log(firstUniceChar(input2));
+// console.log(firstUniceChar(input3));
 
+//Найти уникальные элементы с помощью reduce 
+
+// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+// function findUniqNumber(numbers) {
+//     return numbers.reduce((acc, number) => {
+//         if (acc.includes(number)) {
+//             return acc
+//         } else { return [...acc, number]}
+        
+//     },[])
+// }
+
+// console.log(findUniqNumber(numbers)); 
+const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+function findUniqNumber(numbers) {
+    return numbers.reduce((acc, number) => acc.includes(number) ? acc: [...acc, number],[])
+}
+console.log(findUniqNumber(numbers)); 
