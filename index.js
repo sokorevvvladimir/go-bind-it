@@ -103,14 +103,65 @@
 //меньшее из чисел a, b
 //нужно добавить проверку, что функция получает числа
 
-function numbers(a,b){
-    if(typeOf a === "number"&& typeOf b === "number"){
-         return a > b ? b : a;
-    }
-   return `Одно из значений не число`;
-    // if (a<b){
-    //     return a;
-    // }
-    // return b;
+// function numbers(a,b){
+//     if(typeOf a === "number"&& typeOf b === "number"){
+//          return a > b ? b : a;
+//     }
+//    return `Одно из значений не число`;
+//     // if (a<b){
+//     //     return a;
+//     // }
+//     // return b;
+// }
+// console.log(numbers(2,3))
+
+
+
+
+// Напиши скрипт, который для объекта user,
+//последовательно:
+//1 добавит поле mood со значением 'happy'
+//2 заменит hobby на 'skydiving'
+//3 заменит значение premium на false
+//4 выводит содержимое объекта users в фортмате
+//ключ:значение используя Object.keys() и for...of
+
+
+// const user = {
+//   name: "John",
+//   age: 20,
+//   hobby: "tenis",
+//   premium: true,
+// };
+
+// user.mood = 'happy';
+// user.hobby = 'skydiving';
+// user.premium = false;
+// for (const key of Object.keys(user)) {
+
+//     console.log(`${key}: ${user[key]}`);
+    
+    
+// }
+
+// console.log(user)
+
+
+// У нас есть объект, в котором храняться зарплаты
+//нашей команды
+//Напишите код для сумирования всех зарплат и
+//сохраните его результат в переменной sum.
+//Если объект salaries пуст, то результат должен быть 0
+
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+
+let total = 0;
+
+for (const key of Object.values(salaries)) {
+    total += key;
 }
-console.log(numbers(2,3))
+console.log(total)
