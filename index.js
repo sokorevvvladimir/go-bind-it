@@ -64,7 +64,7 @@
 // } else {
 //     console.log("Я вас не знаю");
 // }
- 
+
 // switch (loginInput) {
 //     case "Админ":
 //         const passwordInput = prompt("Ведите свой пароль");
@@ -140,8 +140,8 @@
 // for (const key of Object.keys(user)) {
 
 //     console.log(`${key}: ${user[key]}`);
-    
-    
+
+
 // }
 
 // console.log(user)
@@ -153,15 +153,40 @@
 //сохраните его результат в переменной sum.
 //Если объект salaries пуст, то результат должен быть 0
 
-const salaries = {
-  Mango: 100,
-  Poly: 160,
-  Ajax: 1470,
-};
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
 
-let total = 0;
+// let total = 0;
 
-for (const key of Object.values(salaries)) {
-    total += key;
+// for (const key of Object.values(salaries)) {
+//     total += key;
+// }
+// console.log(total)
+
+// Напишите ф-цию calcTotalPrice(stones, stonesName),
+//которая принимает массив объектов и
+//строку с названием камня.
+//Функция считает м возвращает общую стоимость камней
+//с таким именем, ценой и количеством из объекта
+
+const stones = [
+    { name: "Щебень", price: 150, quantity: 50 },
+    { name: "Изумруд", price: 1300, quantity: 4 },
+    { name: "Бриллиант", price: 2700, quantity: 6 },
+    { name: "Сапфир", price: 400, quantity: 7 },
+    { name: "Щебень", price: 150, quantity: 100 },
+];
+const calcTotalPrice = function(stones, stonesName) {
+    let total = 0;
+    for (const stone of stones) {
+        if (stone.name === stonesName) {
+            total += (stone.price * stone.quantity);
+        }
+
+    }
+    return total;
 }
-console.log(total)
+console.log(calcTotalPrice(stones, "Щебень"));
