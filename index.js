@@ -166,13 +166,13 @@
 //Функция считает м возвращает общую стоимость камней
 //с таким именем, ценой и количеством из объекта
 
-const stones = [
-  { name: "Щебень", price: 150, quantity: 50 },
-  { name: "Изумруд", price: 1300, quantity: 4 },
-  { name: "Бриллиант", price: 2700, quantity: 6 },
-  { name: "Сапфир", price: 400, quantity: 7 },
-  { name: "Щебень", price: 150, quantity: 100 },
-];
+// const stones = [
+//   { name: "Щебень", price: 150, quantity: 50 },
+//   { name: "Изумруд", price: 1300, quantity: 4 },
+//   { name: "Бриллиант", price: 2700, quantity: 6 },
+//   { name: "Сапфир", price: 400, quantity: 7 },
+//   { name: "Щебень", price: 150, quantity: 100 },
+// ];
 // const calcTotalPrice = function(stones, stonesName) {
 //     let total = 0;
 //     for (const stone of stones) {
@@ -214,7 +214,7 @@ const stones = [
 
 // const firstUniceChar = function (str) {
 //   const array = [...str]
- 
+
 //   const letters = array.reduce((acc, letter) => {
 //     return {...acc, [letter]: acc[letter] ? acc[letter] + 1 : 1}
 //   }, {})
@@ -222,7 +222,7 @@ const stones = [
 //     if (letters[key] === 1) {
 //       return array.indexOf(key);
 //     };
-    
+
 //   };
 //   return -1;
 // };
@@ -238,7 +238,7 @@ const stones = [
 //         if (acc.includes(number)) {
 //             return acc
 //         } else { return [...acc, number]}
-        
+
 //     },[])
 // }
 
@@ -263,7 +263,7 @@ const stones = [
 
 // let farengeit = celsius.map((t) => {
 //     return t * 1.8 + 32;
-   
+
 // })
 // console.log(farengeit);
 
@@ -281,3 +281,47 @@ const stones = [
 //     return acc + user.years;
 // }, 0)
 // console.log(years);
+
+// --------------------------
+
+//Напишите функцию конструктор Storage который создаёт объкты 
+//для управления складом товаров. 
+//При вызове будет получать один агрумент - начальный массив товаров, 
+//и записывать его в свойство items. 
+//Добавь методы класса:
+//getItems() - возвращайте массив товаров 
+//addItems(item) - получает новый товар и добавляет его к текущим 
+//removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
+
+function Storage(itemsArray) {
+  this.item = itemsArray;
+}
+
+Storage.prototype.getItems = function () {
+  return this.item;
+}
+
+Storage.prototype.addItems = function (item) {
+  this.item.push(item);
+}
+
+Storage.prototype.removeItem = function (item) {
+  const index = this.item.indexOf(item);
+
+  if (index === -1) {
+    console.log("Такого элемента нет");
+    return;
+
+  }
+  this.item.splice(index, 1);
+}
+
+const firstStorage = new Storage(["apple", "banana", "mango"]);
+
+
+
+firstStorage.addItems("lemon")
+
+firstStorage.removeItem("mango")
+
+console.log(firstStorage.getItems());
