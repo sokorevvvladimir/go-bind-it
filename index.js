@@ -293,35 +293,62 @@
 //addItems(item) - получает новый товар и добавляет его к текущим 
 //removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
 
-function Storage(itemsArray) {
-  this.item = itemsArray;
-}
+// function Storage(itemsArray) {
+//   this.item = itemsArray;
+// }
 
-Storage.prototype.getItems = function () {
-  return this.item;
-}
+// Storage.prototype.getItems = function () {
+//   return this.item;
+// }
 
-Storage.prototype.addItems = function (item) {
-  this.item.push(item);
-}
+// Storage.prototype.addItems = function (item) {
+//   this.item.push(item);
+// }
 
-Storage.prototype.removeItem = function (item) {
-  const index = this.item.indexOf(item);
+// Storage.prototype.removeItem = function (item) {
+//   const index = this.item.indexOf(item);
 
-  if (index === -1) {
-    console.log("Такого элемента нет");
-    return;
+//   if (index === -1) {
+//     console.log("Такого элемента нет");
+//     return;
 
-  }
-  this.item.splice(index, 1);
-}
+//   }
+//   this.item.splice(index, 1);
+// }
 
-const firstStorage = new Storage(["apple", "banana", "mango"]);
+// const firstStorage = new Storage(["apple", "banana", "mango"]);
 
 
 
-firstStorage.addItems("lemon")
+// firstStorage.addItems("lemon")
 
-firstStorage.removeItem("mango")
+// firstStorage.removeItem("mango")
 
-console.log(firstStorage.getItems());
+// console.log(firstStorage.getItems());
+
+//Напишите класс Client котрорый создает объект 
+//со свойствами login email 
+//Объяви приватные свойства #login #email, 
+//доступ к которым сделай через геттер и сеттер login email
+
+
+// class Client {
+//   #login;
+//   #email;
+//   constructor(login, email) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+//   get userData() {
+//     return { login:this.#login, email:this.#email}
+//   }
+//   set changeUserData ({newEmail, newLogin}) {
+   
+//     this.#email = newEmail;
+//     this.#login = newLogin;
+//   }
+
+// }
+// const client = new Client("mango", "mango@gmail.com");
+// client.changeUserData = { newLogin: "Poly", newEmail: "poly@gmail.com" };
+// console.log(client.userData);
