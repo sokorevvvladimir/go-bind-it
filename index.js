@@ -255,34 +255,69 @@
 //* Четным li указать красный фон, нечетным -- синим
 //Для выполнения задания используйте createElement
 
-const inputRef = document.createElement('input');
+// const inputRef = document.createElement('input');
 
-const btnAddRef = document.createElement('button');
-btnAddRef.textContent = 'add';
+// const btnAddRef = document.createElement('button');
+// btnAddRef.textContent = 'add';
 
-const btnRemoveRef = document.createElement('button');
-btnRemoveRef.textContent = 'remove';
+// const btnRemoveRef = document.createElement('button');
+// btnRemoveRef.textContent = 'remove';
 
-const listRef = document.createElement('ol');
+// const listRef = document.createElement('ol');
 
-const containerRef = document.querySelector('.container');
+// const containerRef = document.querySelector('.container');
 
-containerRef.append(inputRef, btnAddRef, btnRemoveRef, listRef);
+// containerRef.append(inputRef, btnAddRef, btnRemoveRef, listRef);
 
-btnAddRef.addEventListener('click', createItemRef)
+// btnAddRef.addEventListener('click', createItemRef)
 
-function createItemRef() {
-    const itemRef = document.createElement('li');
-    itemRef.textContent = inputRef.value ? inputRef.value : `nothing`
-    listRef.append(itemRef)
-    console.log(listRef.children.length);
+// function createItemRef() {
+//     const itemRef = document.createElement('li');
+//     itemRef.textContent = inputRef.value ? inputRef.value : `nothing`
+//     listRef.append(itemRef)
+//     console.log(listRef.children.length);
 
-    const isItemRefEvent = listRef.children.length % 2 === 0;
-    itemRef.classList.add(isItemRefEvent ? 'even' : 'odd');
-    inputRef.value = '';
-}
+//     const isItemRefEvent = listRef.children.length % 2 === 0;
+//     itemRef.classList.add(isItemRefEvent ? 'even' : 'odd');
+//     inputRef.value = '';
+// }
     
-btnRemoveRef.addEventListener('click', () => {
-    if (!listRef.hasChildNodes()) return;
-    listRef.removeChild(listRef.lastElementChild)
-})
+// btnRemoveRef.addEventListener('click', () => {
+//     if (!listRef.hasChildNodes()) return;
+//     listRef.removeChild(listRef.lastElementChild)
+// })
+
+
+    //Создать небольшую игру:) 
+    // - Изначально на экране пользователя будет отображаться 
+    //какая - то форма (круг, квадрат, прямоулольник) 
+    // - При нажатии на нее в рандомном порядке форма должна 
+    //меняться на другую 
+    // - Форма каждый раз должна появляться в разных местах на странице // - Цвет формы в рандомном порядке меняется,
+
+//     const forms = ['width: 100px; height: 100px; border-width: 1px; border-color: #000000', 'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000', 'width: 150px; height: 100px; border-width: 1px; border-color: #000000', 'width: 200px; height: 100px; border-radius: 100px / 50px;', 'width: 150px; height: 100px; transform: skew(20deg);', ];
+//     const randomither = max => {
+//         return Math.floor(Math.random() * max);
+//     };
+
+// function getRandomHexColor() {
+//     return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+// };
+
+// const formRef = document.createElement('div');
+// const containerRef = document.querySelector('.container');
+// containerRef.append(formRef);
+// formRef.addEventListener('click', generateForm);
+
+// function generateForm() {
+//     formRef.style.cssText = forms[randomither(forms.length - 1)]
+//     formRef.style.backgroundColor = getRandomHexColor()
+//     formRef.style.position = "absolute"
+//     let height = 100 - (formRef.clientHeight * 100) / document.documentElement.clientHeight;
+//     let width = 100 - (formRef.clientWidth * 100) / document.documentElement.clientWidth;
+//     console.log(randomither(height));
+//     console.log(randomither(width));
+//     formRef.style.top = `${randomither(height)}%`;
+//     formRef.style.left = `${randomither(width)}%`;
+// }
+// generateForm();
