@@ -248,107 +248,41 @@
 //     return numbers.reduce((acc, number) => acc.includes(number) ? acc: [...acc, number],[])
 // }
 // console.log(findUniqNumber(numbers)); 
-// ========================================
-//Дан массив с числами. Оставьте в нем только положительные числа.
-//Затем извлеките квадратный корень и этих чисел.
-// const array = [121, -2, 225, 0, 4, -5, 36, -11];
-// const sqrtArray = array.filter(elem => elem > 0).map(number => Math.sqrt(number));
-// console.log(sqrtArray);
-// ===============================================
 
+//1. Создать маркированный список.
+//Создать кнопки "Add" "Remove", которые будут менять состав списка
+//Создать input с которого будем получать значение, которое будет в li
+//* Четным li указать красный фон, нечетным -- синим
+//Для выполнения задания используйте createElement
 
-//10. Создание массива значений Фаренгейта из массива значений Цельсия
+const inputRef = document.createElement('input');
 
-// let celsius = [-15, -5, 0, 10, 16, 20, 24, 32];
+const btnAddRef = document.createElement('button');
+btnAddRef.textContent = 'add';
 
-// let farengeit = celsius.map((t) => {
-//     return t * 1.8 + 32;
+const btnRemoveRef = document.createElement('button');
+btnRemoveRef.textContent = 'remove';
 
-// })
-// console.log(farengeit);
+const listRef = document.createElement('ol');
 
-// ====================================================
-//8. Узнать общие годы практики в объекте workers
+const containerRef = document.querySelector('.container');
 
-// const workers = [
-//   { id: 10, name: 'Mango', years: 14 },
-//   { id: 2, name: 'Poly', years: 19 },
-//   { id: 41, name: 'Ajax', years: 30 },
-//   { id: 99, name: 'Kiwi', years: 22 },
-// ];
+containerRef.append(inputRef, btnAddRef, btnRemoveRef, listRef);
 
-// const years = workers.reduce((acc, user) => {
-//     return acc + user.years;
-// }, 0)
-// console.log(years);
+btnAddRef.addEventListener('click', createItemRef)
 
-// --------------------------
+function createItemRef() {
+    const itemRef = document.createElement('li');
+    itemRef.textContent = inputRef.value ? inputRef.value : `nothing`
+    listRef.append(itemRef)
+    console.log(listRef.children.length);
 
-//Напишите функцию конструктор Storage который создаёт объкты 
-//для управления складом товаров. 
-//При вызове будет получать один агрумент - начальный массив товаров, 
-//и записывать его в свойство items. 
-//Добавь методы класса:
-//getItems() - возвращайте массив товаров 
-//addItems(item) - получает новый товар и добавляет его к текущим 
-//removeItem(item) - плучает товар и, если он есть, удаляет его из текущих
-
-// function Storage(itemsArray) {
-//   this.item = itemsArray;
-// }
-
-// Storage.prototype.getItems = function () {
-//   return this.item;
-// }
-
-// Storage.prototype.addItems = function (item) {
-//   this.item.push(item);
-// }
-
-// Storage.prototype.removeItem = function (item) {
-//   const index = this.item.indexOf(item);
-
-//   if (index === -1) {
-//     console.log("Такого элемента нет");
-//     return;
-
-//   }
-//   this.item.splice(index, 1);
-// }
-
-// const firstStorage = new Storage(["apple", "banana", "mango"]);
-
-
-
-// firstStorage.addItems("lemon")
-
-// firstStorage.removeItem("mango")
-
-// console.log(firstStorage.getItems());
-
-//Напишите класс Client котрорый создает объект 
-//со свойствами login email 
-//Объяви приватные свойства #login #email, 
-//доступ к которым сделай через геттер и сеттер login email
-
-
-// class Client {
-//   #login;
-//   #email;
-//   constructor(login, email) {
-//     this.#login = login;
-//     this.#email = email;
-//   }
-//   get userData() {
-//     return { login:this.#login, email:this.#email}
-//   }
-//   set changeUserData ({newEmail, newLogin}) {
-   
-//     this.#email = newEmail;
-//     this.#login = newLogin;
-//   }
-
-// }
-// const client = new Client("mango", "mango@gmail.com");
-// client.changeUserData = { newLogin: "Poly", newEmail: "poly@gmail.com" };
-// console.log(client.userData);
+    const isItemRefEvent = listRef.children.length % 2 === 0;
+    itemRef.classList.add(isItemRefEvent ? 'even' : 'odd');
+    inputRef.value = '';
+}
+    
+btnRemoveRef.addEventListener('click', () => {
+    if (!listRef.hasChildNodes()) return;
+    listRef.removeChild(listRef.lastElementChild)
+})
