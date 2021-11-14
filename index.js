@@ -243,8 +243,46 @@
 // }
 
 // console.log(findUniqNumber(numbers)); 
-const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
-function findUniqNumber(numbers) {
-    return numbers.reduce((acc, number) => acc.includes(number) ? acc: [...acc, number],[])
+// const numbers = [1, 9, 0, 1, 5, 9, 1, 6];
+// function findUniqNumber(numbers) {
+//     return numbers.reduce((acc, number) => acc.includes(number) ? acc: [...acc, number],[])
+// }
+// console.log(findUniqNumber(numbers)); 
+
+//1. Создать маркированный список.
+//Создать кнопки "Add" "Remove", которые будут менять состав списка
+//Создать input с которого будем получать значение, которое будет в li
+//* Четным li указать красный фон, нечетным -- синим
+//Для выполнения задания используйте createElement
+
+const inputRef = document.createElement('input');
+
+const btnAddRef = document.createElement('button');
+btnAddRef.textContent = 'add';
+
+const btnRemoveRef = document.createElement('button');
+btnRemoveRef.textContent = 'remove';
+
+const listRef = document.createElement('ol');
+
+const containerRef = document.querySelector('.container');
+
+containerRef.append(inputRef, btnAddRef, btnRemoveRef, listRef);
+
+btnAddRef.addEventListener('click', createItemRef)
+
+function createItemRef() {
+    const itemRef = document.createElement('li');
+    itemRef.textContent = inputRef.value ? inputRef.value : `nothing`
+    listRef.append(itemRef)
+    console.log(listRef.children.length);
+
+    const isItemRefEvent = listRef.children.length % 2 === 0;
+    itemRef.classList.add(isItemRefEvent ? 'even' : 'odd');
+    inputRef.value = '';
 }
-console.log(findUniqNumber(numbers)); 
+    
+btnRemoveRef.addEventListener('click', () => {
+    if (!listRef.hasChildNodes()) return;
+    listRef.removeChild(listRef.lastElementChild)
+})

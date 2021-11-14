@@ -1,0 +1,9 @@
+.even {
+  background-color: red;
+  color: blueviolet;
+}
+
+.odd {
+  background-color: blueviolet;
+  color: red;
+}
