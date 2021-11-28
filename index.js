@@ -281,19 +281,19 @@
 //     itemRef.classList.add(isItemRefEvent ? 'even' : 'odd');
 //     inputRef.value = '';
 // }
-    
+
 // btnRemoveRef.addEventListener('click', () => {
 //     if (!listRef.hasChildNodes()) return;
 //     listRef.removeChild(listRef.lastElementChild)
 // })
 
 
-    //Создать небольшую игру:) 
-    // - Изначально на экране пользователя будет отображаться 
-    //какая - то форма (круг, квадрат, прямоулольник) 
-    // - При нажатии на нее в рандомном порядке форма должна 
-    //меняться на другую 
-    // - Форма каждый раз должна появляться в разных местах на странице // - Цвет формы в рандомном порядке меняется,
+//Создать небольшую игру:) 
+// - Изначально на экране пользователя будет отображаться 
+//какая - то форма (круг, квадрат, прямоулольник) 
+// - При нажатии на нее в рандомном порядке форма должна 
+//меняться на другую 
+// - Форма каждый раз должна появляться в разных местах на странице // - Цвет формы в рандомном порядке меняется,
 
 //     const forms = ['width: 100px; height: 100px; border-width: 1px; border-color: #000000', 'width: 100px; height: 100px; border-radius: 50%; border-width: 1px; border-color: #000000', 'width: 150px; height: 100px; border-width: 1px; border-color: #000000', 'width: 200px; height: 100px; border-radius: 100px / 50px;', 'width: 150px; height: 100px; transform: skew(20deg);', ];
 //     const randomither = max => {
